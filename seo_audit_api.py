@@ -4,6 +4,11 @@ from bs4 import BeautifulSoup
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "SEO Audit API is running!"}
+
+
 @app.get("/seo-audit/")
 def seo_audit(url: str):
     try:
